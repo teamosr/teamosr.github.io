@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>彭城七里团体服务系统</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: '微软雅黑', sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .header {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url(images/background.png) center/cover;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .service-nav {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .nav-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+            text-decoration: none;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .form-section {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 30px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #3498db;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #34495e;
+            font-weight: 500;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        .btn {
+            background: #3498db;
+            color: white;
+            padding: 12px 35px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .record-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+        }
+
+        .record-table th,
+        .record-table td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .record-table th {
+            background: #2c3e50;
+            color: white;
+        }
+
+        .feedback-rating {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .star {
+            font-size: 24px;
+            color: #ddd;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .star:hover,
+        .star.active {
+            color: #f1c40f;
+        }
+
+        /* 改进按钮的样式，确保不会遮挡文字 */
+        .btn {
+            margin-top: 20px;
+            padding: 12px 35px;
+            font-size: 16px;
+            display: inline-block;
+            background-color: #38afe5;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2a97b6;
+        }
+
+        /* 防止链接和按钮下划线问题 */
+        .btn,
+        .nav-card a {
+            text-decoration: none;
+        }
+
+        /* 轮播图的动画优化：循环播放 */
+        @keyframes slideAnimation {
+            0% {
+                transform: translateX(0);
+            }
+
+            33% {
+                transform: translateX(-100%);
+            }
+
+            66% {
+                transform: translateX(-200%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .focus_image {
+            animation: slideAnimation 8s infinite;
+        }
+
+        @media (max-width: 768px) {
+            .service-nav {
+                grid-template-columns: 1fr;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                padding: 50px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h1>彭城七里团体专属服务</h1>
+        <p>为旅行社、企业团建、教育研学提供定制化服务</p>
+    </header>
+
+    <div class="container">
+        <!-- 服务导航 -->
+        <div class="service-nav">
+            <div class="nav-card">
+                <div class="icon">📅</div>
+                <h3>讲解预约服务</h3>
+                <p>专业导游团队全程陪同讲解</p>
+                <a href="#booking" class="btn">立即预约</a>
+            </div>
+
+            <div class="nav-card">
+                <div class="icon">🛍️</div>
+                <h3>文创产品预定</h3>
+                <p>批量订购专属文化纪念品</p>
+                <a href="#products" class="btn">商品目录</a>
+            </div>
+
+            <div class="nav-card">
+                <div class="icon">📊</div>
+                <h3>消费管理</h3>
+                <p>实时查询消费记录与发票</p>
+                <a href="#records" class="btn">查看记录</a>
+            </div>
+        </div>
+
+        <!-- 讲解预约表单 -->
+        <section class="form-section" id="booking">
+            <h2>陪同讲解预约</h2>
+            <form>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>单位类型</label>
+                        <select required>
+                            <option value="">请选择</option>
+                            <option>旅行社</option>
+                            <option>企业单位</option>
+                            <option>教育机构</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>预计参观日期</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>团队人数</label>
+                        <input type="number" min="10" required>
+                    </div>
+                    <div class="form-group">
+                        <label>讲解语种</label>
+                        <select>
+                            <option>中文</option>
+                            <option>英语</option>
+                            <option>日语</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn">提交预约申请</button>
+            </form>
+        </section>
+
+        <!-- 文创产品预定 -->
+        <section class="form-section" id="products">
+            <h2>文创产品预定</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>选择产品</label>
+                    <select required>
+                        <option>楚汉文化书签套装</option>
+                        <option>彭城建筑微缩模型</option>
+                        <option>非遗香包礼盒</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>订购数量</label>
+                    <input type="number" min="10" required>
+                </div>
+                <div class="form-group">
+                    <label>配送方式</label>
+                    <select required>
+                        <option>景区自提</option>
+                        <option>快递配送</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>特殊要求</label>
+                    <textarea rows="3"></textarea>
+                </div>
+            </div>
+            <button class="btn">提交订单</button>
+        </section>
+
+        <!-- 消费记录 -->
+        <section class="form-section" id="records">
+            <h2>消费记录查询</h2>
+            <table class="record-table">
+                <thead>
+                    <tr>
+                        <th>日期</th>
+                        <th>项目</th>
+                        <th>金额</th>
+                        <th>状态</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2023-08-15</td>
+                        <td>团体门票</td>
+                        <td>¥2,400</td>
+                        <td>已支付</td>
+                    </tr>
+                    <!-- 更多记录... -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 用户反馈部分 -->
+        <section class="form-section">
+            <h2>服务反馈</h2>
+            <form id="feedbackForm" action="thank_you.html" method="get">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>联系人姓名</label>
+                        <input type="text" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>联系电话</label>
+                        <input type="tel" name="phone" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>服务评价</label>
+                    <div class="feedback-rating">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>意见与建议</label>
+                    <textarea rows="5" name="suggestions" required></textarea>
+                </div>
+                <button type="submit" class="btn">提交反馈</button>
+            </form>
+        </section>
+        
+        <script>
+            // 处理星级评分
+            const stars = document.querySelectorAll('.star');
+            let rating = 0; // 默认评分为0
+
+            stars.forEach(star => {
+                star.addEventListener('click', function () {
+                    rating = this.getAttribute('data-value');
+                    stars.forEach(star => {
+                        star.classList.remove('active');
+                    });
+                    // 激活选中的星级
+                    for (let i = 0; i < rating; i++) {
+                        stars[i].classList.add('active');
+                    }
+                });
+            });
+
+            // 在表单提交时将评分信息传递给thank_you.html
+            document.getElementById('feedbackForm').addEventListener('submit', function (e) {
+                const ratingInput = document.createElement('input');
+                ratingInput.type = 'hidden';
+                ratingInput.name = 'rating';
+                ratingInput.value = rating;
+                this.appendChild(ratingInput); // 动态添加评分字段
+            });
+        </script>
+</body>
+
+</html>

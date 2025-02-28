@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>感谢反馈 - 彭城七里团体服务系统</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: '微软雅黑', sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .header {
+            background-color: #3498db;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        .thank-you-message {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 20px;
+            color: #3498db;
+        }
+
+        .feedback-details {
+            margin-top: 20px;
+        }
+
+        .feedback-details p {
+            margin: 15px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 35px;
+            background: #3498db;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        .stars {
+            color: #f1c40f;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h1>感谢您的反馈！</h1>
+    </header>
+
+    <div class="container">
+        <div class="thank-you-message">
+            <p>感谢您的宝贵意见和反馈，我们会尽快为您提供服务！</p>
+        </div>
+
+        <div class="feedback-details">
+            <h2>您的反馈详情：</h2>
+
+            <p><strong>联系人姓名：</strong> <span id="name"></span></p>
+            <p><strong>联系电话：</strong> <span id="phone"></span></p>
+            <p><strong>服务评价：</strong> <span id="rating"></span></p>
+            <p><strong>意见与建议：</strong> <span id="suggestions"></span></p>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="main.html" class="btn">返回首页</a>
+        </div>
+    </div>
+
+    <script>
+        // 获取查询字符串参数并显示在页面上
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // 显示反馈内容
+        document.getElementById('name').textContent = urlParams.get('name') || '未填写';
+        document.getElementById('phone').textContent = urlParams.get('phone') || '未填写';
+
+        // 显示服务评分，动态生成星级显示
+        const rating = urlParams.get('rating');
+        const ratingElement = document.getElementById('rating');
+        let stars = '';
+        for (let i = 0; i < rating; i++) {
+            stars += '★';
+        }
+        ratingElement.innerHTML = stars || '未评分';
+
+        document.getElementById('suggestions').textContent = urlParams.get('suggestions') || '未填写';
+    </script>
+</body>
+
+</html>

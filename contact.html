@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .contact-header h1 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .contact-content {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-section {
+            margin-bottom: 30px;
+        }
+
+        .info-section h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        textarea {
+            height: 120px;
+        }
+
+        button {
+            background: #3498db;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #2980b9;
+        }
+
+        .map-container {
+            margin-top: 40px;
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        @media (max-width: 768px) {
+            .contact-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .contact-header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="contact-header">
+            <h1>联系我们</h1>
+            <p>我们随时准备为您提供帮助</p>
+        </div>
+
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="info-section">
+                    <h3>团队信息</h3>
+                    <p>地址：徐州中国矿业大学南湖校区</p>
+                    <p>电话：010-12345678</p>
+                    <p>邮箱：contact@company.com</p>
+                </div>
+
+                <div class="info-section">
+                    <h3>营业时间</h3>
+                    <p>周一至周五：9:00 - 18:00</p>
+                    <p>周六：10:00 - 16:00</p>
+                    <p>周日：休息</p>
+                </div>
+
+                <div class="info-section">
+                    <h3>紧急联系</h3>
+                    <p>24小时服务热线：123-1234-1234</p>
+                </div>
+            </div>
+
+            <form class="contact-form" action="#" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="您的姓名" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="电子邮箱" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" placeholder="请输入您的留言..." required></textarea>
+                </div>
+                <button type="submit">发送消息</button>
+            </form>
+        </div>
+
+        <div class="map-container">
+            <iframe
+                src="https://map.baidu.com/poi/%E5%8C%97%E4%BA%AC%E5%B8%82%E6%9C%9D%E9%98%B3%E5%8C%BA/@12958571.92,4831630.47,19z?uid=xxxxxx&info=merge"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+</body>
+
+</html>

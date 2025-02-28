@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我们</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .page-header {
+            text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .page-header h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+        }
+
+        .section {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #3498db;
+            display: inline-block;
+        }
+
+        .company-intro {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .core-values {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .value-icon {
+            font-size: 2.5em;
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+
+        .team-members {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .member-card {
+            text-align: center;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .member-photo {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-bottom: 3px solid #3498db;
+        }
+
+        .member-info {
+            padding: 20px;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px 0;
+            
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 30px;
+            min-width: 200px;
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            color: #3498db;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .history-timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline-item {
+            padding: 20px 40px;
+            border-left: 3px solid #3498db;
+            margin-left: 20px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            width: 16px;
+            height: 16px;
+            background: #3498db;
+            border-radius: 50%;
+            position: absolute;
+            left: -10px;
+            top: 25px;
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2em;
+            }
+
+            .section {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="page-header">
+        <h1>关于我们</h1>
+        <p>创新驱动未来，技术改变世界</p>
+    </header>
+
+    <div class="container">
+        <!-- 公司简介 -->
+        <section class="section">
+            <h2 class="section-title">团队简介</h2>
+            <p class="company-intro">
+                我们是一个致力于帮助游客便捷快速地查询“彭城七里”一带及周边的景点信息、实时交通的团队，于2024年组建，一直关注着徐州彭城七里文化的传承。
+            </p>
+
+            <!-- 核心价值 -->
+            <div class="core-values">
+                <div class="value-card">
+                    <div class="value-icon">★</div>
+                    <h3>传承精神</h3>
+                    <p>持续关注，传承文化</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">❤</div>
+                    <h3>游客至上</h3>
+                    <p>以游客需求为导向创造价值</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">☯</div>
+                    <h3>合作共赢</h3>
+                    <p>与合作伙伴共同成长</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 团队介绍 -->
+        <section class="section">
+            <h2 class="section-title">核心团队</h2>
+            <div class="team-members">
+                <div class="member-info">
+                    <h3>郑涵</h3>
+                    <p>队长</p>
+                    <p>中国矿业大学建筑与设计学院学生</p>
+                </div>
+                <div class="member-info">
+                    <h3>朱钰铭</h3>
+                    <p>队员</p>
+                    <p>中国矿业大学建筑与设计学院学生</p>
+                </div>
+                <div class="member-info">
+                    <h3>崔江涛</h3>
+                    <p>队员</p>
+                    <p>中国矿业大学计算机科学与技术学院学生</p>
+                </div>
+                <div class="member-info">
+                    <h3>夏欣玥</h3>
+                    <p>队员</p>
+                    <p>中国矿业大学材料与物理学院学生</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 数据统计 -->
+        <div class="stats-container">
+            传承彭城历史文化，赓续中华优秀传统
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>彭城七里全景导览</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: '微软雅黑', sans-serif;
+        }
+
+        body {
+            background-color: #f5f3ef;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            color: #5d432c;
+            font-size: 2.8em;
+            margin-bottom: 15px;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            padding: 20px 0;
+        }
+
+        .photo-item {
+            position: relative;
+            border: 3px solid #d4c8b9;
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .photo-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-bottom: 3px solid #d4c8b9;
+        }
+
+        .photo-caption {
+            padding: 20px;
+            background: #fff;
+            color: #5d432c;
+            position: relative;
+        }
+
+        .caption-title {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #8b5a2b;
+        }
+
+        .book-btn {
+            display: inline-block;
+            background: #2c3e50;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .book-btn:hover {
+            background: #3498db;
+            border-color: #2c3e50;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .photo-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            h1 {
+                font-size: 2.2em;
+            }
+
+            .photo-img {
+                height: 300px;
+            }
+
+            .book-btn {
+                padding: 8px 20px;
+                font-size: 0.9em;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .photo-caption {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="gallery-header">
+            <h1>彭城七里景区介绍</h1>
+            <p>穿越两千年的历史长廊</p>
+        </div>
+
+        <div class="photo-grid">
+            <!-- 第1-2景 -->
+            <div class="photo-item">
+                <img src="images/戏马雄风.png" alt="戏马台" class="photo-img">
+                <div class="photo-caption">
+                    <div class="caption-title">戏马雄风</div>
+                    <p>项羽练兵场遗址，现存明代重建的高台建筑群，台高10丈，可俯瞰全城</p>
+                    <a href="https://gaode.com/search?id=B02040SWBN&city=320303&geoobj=117.185245%7C34.253263%7C117.194492%7C34.257884&query_type=IDQ&query=%E6%88%8F%E9%A9%AC%E5%8F%B0%E5%94%AE%E7%A5%A8%E5%A4%84&zoom=17.5" class="book-btn">预约参观</a>
+                </div>
+            </div>
+            <div class="photo-item">
+                <img src="images/回龙古韵.png" alt="回龙窝" class="photo-img">
+                <div class="photo-caption">
+                    <div class="caption-title">回龙古韵</div>
+                    <p>保存最完整的明清建筑群，72条巷道如迷宫般交错，青砖灰瓦间可见精美砖雕</p>
+                    <a href="https://gaode.com/search?id=B02040TYOK&city=320303&geoobj=117.189283%7C34.257337%7C117.19853%7C34.261957&query_type=IDQ&query=%E5%BE%90%E5%B7%9E%E5%B8%82%E5%9B%9E%E9%BE%99%E7%AA%9D%E5%8E%86%E5%8F%B2%E6%96%87%E5%8C%96%E8%A1%97%E5%8C%BA&zoom=17.5" class="book-btn">预约参观</a>
+                </div>
+            </div>
+
+            <!-- 第3-4景 -->
+            <div class="photo-item">
+                <img src="images/快哉清风.png" alt="快哉亭" class="photo-img">
+                <div class="photo-caption">
+                    <div class="caption-title">快哉清风</div>
+                    <p>苏轼任徐州知州时建亭赋诗处，"贤者之乐，快哉此风"典故发源地</p>
+                    <a href="https://gaode.com/search?id=B020400B9Q&city=320303&geoobj=117.186497%7C34.256822%7C117.195744%7C34.261442&query_type=IDQ&query=%E5%BF%AB%E5%93%89%E4%BA%AD%E5%85%AC%E5%9B%AD&zoom=17.5" class="book-btn">预约参观</a>
+                </div>
+            </div>
+            <div class="photo-item">
+                <img src="images/城垣沧桑.png" alt="明代城墙" class="photo-img">
+                <div class="photo-caption">
+                    <div class="caption-title">城垣沧桑</div>
+                    <p>明代洪武年间修筑的城墙遗址，现存夯土层可见七次黄河淤泥沉积</p>
+                    <a href="https://gaode.com/search?id=B02040SZPC&city=320303&geoobj=117.140859%7C34.258539%7C117.218159%7C34.297157&query_type=IDQ&query=%E6%98%8E%E4%BB%A3%E6%B4%AA%E6%AD%A6%E5%B9%B4%E9%97%B4%E5%8F%A4%E5%9F%8E%E5%A2%99&zoom=14.44" class="book-btn">预约参观</a>
+                </div>
+            </div>
+
+            <!-- 第5-6景 -->
+            <div class="photo-item">
+                <img src="images/崔氏故宅.png" alt="崔家大院" class="photo-img">
+                <div class="photo-caption">
+                    <div class="caption-title">崔氏故宅</div>
+                    <p>清代晋商代表性四合院，三进院落保存完整，砖雕"百寿图"堪称一绝</p>
+                    <a href="https://gaode.com/search?query=%E5%B4%94%E5%AE%B6%E5%A4%A7%E9%99%A2&city=320300&geoobj=117.167385%7C34.294082%7C117.176633%7C34.298701&zoom=17.5" class="book-btn">预约参观</a>
+                </div>
+            </div>
+            <div class="photo-item">
+                <img src="images/漕运遗踪.png" alt="漕运码头" class="photo-img">
+                <div class="photo-caption">
+                    <div class="caption-title">漕运遗踪</div>
+                    <p>明清大运河漕运码头遗址，现存拴船石、粮仓地基等遗迹</p>
+                    <a href="https://gaode.com/search?query=%E6%BC%95%E8%BF%90%E7%A0%81%E5%A4%B4&city=370000&geoobj=115.546063%7C33.754713%7C122.26013%7C37.062276&zoom=8" class="book-btn">预约参观</a>
+                </div>
+            </div>
+
+            <!-- 第7-8景 -->
+            <div class="photo-item">
+                <img src="images/九里鏖兵.png" alt="九里山" class="photo-img">
+                <div class="photo-caption">
+                    <div class="caption-title">九里鏖兵</div>
+                    <p>楚汉古战场核心区，现存古代箭镞、车辙印等战争遗迹</p>
+                    <a href="https://gaode.com/search?id=B020400BHW&city=320302&geoobj=116.736805%7C39.883385%7C116.746052%7C39.887675&query_type=IDQ&query=%E4%B9%9D%E9%87%8C%E5%B1%B1&zoom=17.5" class="book-btn">预约参观</a>
+                </div>
+            </div>
+            <div class="photo-item">
+                <img src="images/匠心砖语.png" alt="砖雕" class="photo-img">
+                <div class="photo-caption">
+                    <div class="caption-title">匠心砖语</div>
+                    <p>明清建筑砖雕艺术，题材涵盖花卉瑞兽、戏曲故事等200余种</p>
+                    <a href="https://gaode.com/search?id=B020401MYA&city=320303&geoobj=117.133817%7C34.286037%7C117.214858%7C34.32651&query_type=IDQ&query=%E4%B9%BE%E9%9A%86%E8%A1%8C%E5%AE%AB&zoom=14.37" class="book-btn">预约参观</a>
+                </div>
+            </div>
+
+            <!-- 第9-10景 -->
+            <div class="photo-item">
+                <img src="images/故道春秋.png" alt="黄河故道" class="photo-img">
+                <div class="photo-caption">
+                    <div class="caption-title">故道春秋</div>
+                    <p>明清黄河故道遗址，河床高于城区形成"悬河"奇观</p>
+                    <a href="https://gaode.com/search?id=B0FFJQXD3D&city=320302&geoobj=117.182111%7C34.248182%7C117.191358%7C34.252804&query_type=IDQ&query=%E9%BB%84%E6%B2%B3%E6%95%85%E9%81%93&zoom=17.5" class="book-btn">预约参观</a>
+                </div>
+            </div>
+                        
+            <div class="photo-item">
+                <img src="images/唐槐夜雨.png" alt="唐槐" class="photo-img">
+                <div class="photo-caption">
+                    <div class="caption-title">唐槐夜雨</div>
+                    <p>植于唐代的国槐，树龄1300余年，树干中空可容三人</p>
+                    <a href="booking.html?id=1" class="book-btn">预约参观</a>
+                </div>
+            </div>
+
+            <!-- 第13-14景 -->
+            <div class="photo-item">
+                <img src="images/老店遗风.png" alt="老字号" class="photo-img">
+                <div class="photo-caption">
+                    <div class="caption-title">老店遗风</div>
+                    <p>清代"广济堂"药铺旧址，柜台、药柜保留完整，墙面留有民国广告画</p>
+                    <a href="booking.html?id=1" class="book-btn">预约参观</a>
+                </div>
+            </div>
+            <div class="photo-item">
+                <img src="images/地下长城.png" alt="藏兵洞" class="photo-img">
+                <div class="photo-caption">
+                    <div class="caption-title">地下长城</div>
+                    <p>明代军民共建的藏兵洞体系，洞内设有陷阱、瞭望孔等防御设施</p>
+                    <a href="booking.html?id=1" class="book-btn">预约参观</a>
+                </div>
+            </div>
+
+            <!-- 第15-16景 -->
+            <div class="photo-item">
+                <img src="images/中西合璧.png" alt="天主堂" class="photo-img">
+                <div class="photo-caption">
+                    <div class="caption-title">中西合璧</div>
+                    <p>民国天主教堂，哥特式尖顶与中式砖雕完美融合</p>
+                    <a href="booking.html?id=1" class="book-btn">预约参观</a>
+                </div>
+            </div>
+            <div class="photo-item">
+                <img src="images/御笔留痕.png" alt="乾隆御碑" class="photo-img">
+                <div class="photo-caption">
+                    <div class="caption-title">御笔留痕</div>
+                    <p>乾隆南巡时题写的"云龙山行宫"碑刻，楷书字体端庄秀丽</p>
+                    <a href="booking.html?id=1" class="book-btn">预约参观</a>
+                </div>
+            </div>
+
+            <!-- 第17-18景 -->
+            <div class="photo-item">
+                <img src="images/虹桥卧波.png" alt="明代石桥" class="photo-img">
+                <div class="photo-caption">
+                    <div class="caption-title">虹桥卧波</div>
+                    <p>明代单孔石拱桥，桥身浮雕"二龙戏珠"图案栩栩如生</p>
+                    <a href="booking.html?id=1" class="book-btn">预约参观</a>
+                </div>
+            </div>
+
+            <div class="photo-item">
+                <img src="images/灯火阑珊.png" alt="古城夜景" class="photo-img">
+                <div class="photo-caption">
+                    <div class="caption-title">灯火阑珊</div>
+                    <p>夜景照明工程还原"彭城夜肆"历史风貌，再现唐宋不夜城盛景</p>
+                    <a href="booking.html?id=1" class="book-btn">预约参观</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

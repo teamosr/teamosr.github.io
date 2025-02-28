@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>彭城七里文创产品展示</title>
+    <style>
+        /* 通用样式 */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #2a97b6;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .product {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-content {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .product h2 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .product p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+            height: 60px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .buy-button {
+            display: block;
+            padding: 10px;
+            background-color: #28a745;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .buy-button:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            background-color: #2a97b6;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>✨ 彭城七里文创产品展示 ✨</header>
+
+    <div class="container">
+        <!-- 文创产品1 -->
+        <div class="product">
+            <img src="images/七里井空心挂面.png" alt="七里井空心挂面">
+            <div class="product-content">
+                <h2>七里井空心挂面</h2>
+                <p>传统工艺制作，口感顺滑，融合彭城七里的文化元素，体现浓厚的地方特色。</p>
+                <a href="#" class="buy-button">立即购买</a>
+            </div>
+        </div>
+
+        <!-- 文创产品2 -->
+        <div class="product">
+            <img src="images/龙生九子Q版摆件.png" alt="龙生九子Q版摆件">
+            <div class="product-content">
+                <h2>龙生九子Q版摆件</h2>
+                <p>以中国传统文化中的“龙生九子”为主题，Q版造型可爱，寓意吉祥。</p>
+                <a href="#" class="buy-button">立即购买</a>
+            </div>
+        </div>
+
+        <!-- 文创产品3 -->
+        <div class="product">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.ricC5wyZ7FWSjeU8fY1o9QHaFP&pid=Api" alt="国潮汉风文创产品">
+            <div class="product-content">
+                <h2>国潮汉风文创产品</h2>
+                <p>融合汉代文化与现代设计，涵盖服饰、饰品、文具，展现彭城七里的独特魅力。</p>
+                <a href="#" class="buy-button">立即购买</a>
+            </div>
+        </div>
+
+        <!-- 文创产品4 -->
+        <div class="product">
+            <img src="images/彭城七里冰箱贴.png" alt="彭城七里冰箱贴">
+            <div class="product-content">
+                <h2>彭城七里冰箱贴</h2>
+                <p>以彭城七里的人文名胜为主题，设计精美，是纪念徐州之旅的绝佳选择。</p>
+                <a href="#" class="buy-button">立即购买</a>
+            </div>
+        </div>
+
+        <!-- 文创产品5 -->
+        <div class="product">
+            <img src="images/徐州香包.png" alt="徐州香包">
+            <div class="product-content">
+                <h2>徐州香包</h2>
+                <p>国家级非物质文化遗产，手工制作，图案精美，富有地方特色。</p>
+                <a href="#" class="buy-button">立即购买</a>
+            </div>
+        </div>
+
+        <!-- 文创产品6 -->
+        <div class="product">
+            <img src="images/徐州剪纸.png" alt="徐州剪纸">
+            <div class="product-content">
+                <h2>徐州剪纸</h2>
+                <p>历史悠久，作品线条流畅，造型生动，极具收藏价值的艺术品。</p>
+                <a href="#" class="buy-button">立即购买</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 彭城七里文创产品展示 | 传承文化 · 创意无限
+    </footer>
+
+</body>
+
+</html>

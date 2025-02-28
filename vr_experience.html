@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>彭城七里历史场景</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: '宋体', SimSun, serif;
+        }
+
+        body {
+            background-color: #f4f1e8;
+            color: #3a3327;
+            line-height: 1.8;
+        }
+
+        .header {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), url('https://placehold.co/1920x600') center/cover);
+                    height: 60vh;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    color: black;
+                    margin-bottom: 40px;
+            }
+
+            .header h1 {
+                font-size: 3.5em;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                margin-bottom: 20px;
+            }
+
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            .video-wrapper {
+                width: 100%;
+                height: 0;
+                padding-bottom: 56.25%;
+                position: relative;
+                margin: 40px 0;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            }
+
+            .video-wrapper iframe {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+
+            .history-section {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+                margin: 60px 0;
+                background: white;
+                padding: 40px;
+                border-radius: 12px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .timeline {
+                position: relative;
+                padding-left: 30px;
+                border-left: 3px solid #8b5a2b;
+            }
+
+            .timeline-item {
+                margin-bottom: 40px;
+                position: relative;
+                padding-left: 30px;
+            }
+
+            .timeline-item::before {
+                content: '';
+                width: 16px;
+                height: 16px;
+                background: #8b5a2b;
+                border-radius: 50%;
+                position: absolute;
+                left: -36px;
+                top: 8px;
+            }
+
+            .historical-img {
+                width: 100%;
+                height: 400px;
+                object-fit: cover;
+                border-radius: 8px;
+                margin: 20px 0;
+            }
+
+            .quote {
+                font-style: italic;
+                color: #6b5b43;
+                border-left: 4px solid #8b5a2b;
+                padding-left: 20px;
+                margin: 30px 0;
+            }
+
+            @media (max-width: 768px) {
+                .history-section {
+                    grid-template-columns: 1fr;
+                }
+
+                .header h1 {
+                    font-size: 2.5em;
+                }
+            }
+
+            .section-title {
+                font-size: 2em;
+                color: #5d432c;
+                border-bottom: 3px solid #8b5a2b;
+                padding-bottom: 10px;
+                margin: 40px 0;
+            }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>彭城七里历史长廊</h1>
+        <p>千年沧桑话徐州，七里风云见兴衰</p>
+    </div>
+
+    <div class="container">
+        <!-- 视频展示 -->
+        <div class="video-wrapper">
+            <video src="彭城七里.mp4" height="652.5px"width="1160px" autoplay="autoplay" loop="loop" controls="controls"
+                ></video>
+        </div>
+
+        <!-- 历史沿革 -->
+        <h2 class="section-title">历史脉络</h2>
+        <div class="history-section">
+            <div>
+                <img src="images/古城复原图.png" alt="古城复原图" class="historical-img">
+                <p>据《徐州府志》记载，"彭城七里"得名于古城墙七里之距，核心区域涵盖今户部山、戏马台至黄河故道一带，是徐州作为"五省通衢"的历史见证。</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>楚汉时期（前206）</h3>
+                    <p>项羽定都彭城，于戏马台操练兵马，七里范围内分布军营驿站</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>唐宋时期</h3>
+                    <p>大运河漕运兴盛，七里成为商贾云集的漕粮集散地</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>明清时期</h3>
+                    <p>黄河改道形成"城上城"奇观，七里民居形成独特建筑群落</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 文化特色 -->
+        <h2 class="section-title">文化记忆</h2>
+        <div class="history-section">
+            <div>
+                <blockquote class="quote">
+                    "九里山前古战场，牧童拾得旧刀枪" —— 苏轼《彭城怀古》
+                </blockquote>
+                <p>七里区域保留大量历史遗迹：<br>
+                    1. 戏马台：项羽军事遗址<br>
+                    2. 回龙窝：明清民居建筑群<br>
+                    3. 快哉亭：北宋文人雅集之地<br>
+                    4. 黄河故道：明清漕运遗迹</p>
+            </div>
+            <div>
+                <img src="images/寻迹苏东坡.png" alt="古建筑" class="historical-img">
+                <p>特色建筑融合北方四合院与江南民居风格，墙体多采用当地红石，屋顶呈"一坡水"独特形制，见证南北文化交融。</p>
+            </div>
+        </div>
+
+        <!-- 保护现状 -->
+        <h2 class="section-title">遗迹保护</h2>
+        <div class="history-section">
+            <p>近年来徐州市实施：<br>
+                - 历史街区修复工程（2015-2020）<br>
+                - 数字化三维建模保护（2021）<br>
+                - 非遗传统技艺传承计划<br>
+                已修复明清院落48处，保护古井23口，还原石板巷道2.6公里</p>
+            <img src="images/拆迁露出来的教堂.png" alt="保护工程" class="historical-img">
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>彭城逸韵 - 彭城七里历史文化街区</title>
+    <style>
+        /* 基本样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f8f8f8;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* 容器 */
+        .container_12 {
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 头部 */
+        header {
+            background-color: #2a97b6;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header .container_12 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 a img {
+            max-width: 150px;
+        }
+
+        .menu_block {
+            width: 100%;
+        }
+
+        .sf-menu {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+        }
+
+        .sf-menu li {
+            position: relative;
+        }
+
+        .sf-menu li a {
+            color: white;
+            padding: 10px 20px;
+            display: block;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .sf-menu li a:hover,
+        .sf-menu li.current a {
+            background-color: #38afe5;
+            color: white;
+        }
+
+        /* 轮播图 */
+        .focus {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .focus_image {
+            display: flex;
+            transition: transform 1s ease;
+        }
+
+        .focus_image .slide {
+            width: 100%;
+            height: 460px;
+            flex-shrink: 0;
+        }
+
+        .focus_image img {
+            width: 100%;
+            height: 460px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .focus_buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .focus_buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .focus_buttons button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* 内容部分 */
+        .ic {
+            text-align: center;
+            font-size: 24px;
+            margin: 20px 0;
+            color: #2d1f16;
+        }
+
+        .boxes {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .boxes .grid_4 {
+            width: 32%;
+            transition: transform 0.3s ease;
+        }
+
+        .boxes figure {
+            text-align: center;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .boxes figure:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .boxes figure img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .boxes figcaption {
+            padding: 15px 0;
+        }
+
+        .boxes h3 {
+            font-size: 20px;
+            color: #333;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #38afe5;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #2a97b6;
+        }
+
+        /* 产品展示 */
+        .product_listing {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .product {
+            width: 48%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .product h4 {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .product button {
+            padding: 10px 20px;
+            background-color: #2a97b6;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .product button:hover {
+            background-color: #38afe5;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #2a97b6;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer .socials {
+            margin-bottom: 20px;
+        }
+
+        footer .socials a {
+            margin: 0 10px;
+            color: white;
+            font-size: 20px;
+        }
+
+        footer .socials a:hover {
+            opacity: 0.7;
+        }
+
+        footer .copy {
+            font-size: 14px;
+        }
+
+        footer .copy a {
+            color: white;
+        }
+
+        footer .copy a:hover {
+            text-decoration: underline;
+        }
+
+        /* 轮播图的动画优化：循环播放 */
+        @keyframes slideAnimation {
+            0% {
+                transform: translateX(0);
+            }
+
+            33% {
+                transform: translateX(-100%);
+            }
+
+            66% {
+                transform: translateX(-200%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .focus_image {
+            animation: slideAnimation 8s infinite;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .boxes {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .boxes .grid_4 {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body class="page1">
+    <header>
+        <div class="container_12">
+            <div class="grid_12">
+                <h1><a href="index.html"><img src="images/logo.png" alt="彭城逸韵 - 彭城七里历史文化街区"></a></h1>
+                <div class="clear"></div>
+            </div>
+            <div class="menu_block">
+                <nav>
+                    <ul class="sf-menu">
+                        <li class="current"><a href="main.html">首页</a></li>
+                        <li><a href="photo.html">景区介绍</a></li>
+                        <li><a href="travel.html">旅游攻略</a></li>
+                        <li><a href="cultural.html">文创产品</a></li>
+                        <li><a href="vip.html">会员中心</a></li>
+                        <li><a href="about.html">关于我们</a></li>
+                    </ul>
+                </nav>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main">
+        <div class="container_12">
+            <div class="grid_12">
+                <!-- 轮播图区域 -->
+                <div id="focus" class="focus">
+                    <div class="focus_image">
+                        <div class="slide"><img src="images/photo1.png" alt="彭城七里文化"></div>
+                        <div class="slide"><img src="images/photo2.png" alt="文化传承"></div>
+                        <div class="slide"><img src="images/photo3.png" alt="文化传承"></div>
+
+
+                    </div>
+                    <div class="focus_buttons">
+                        <button class="prev">&#10094;</button>
+                        <button class="next">&#10095;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="ic">探索徐州的文化魅力，走进彭城七里</div>
+            <div class="container_12">
+                <div class="grid_12">
+                    <h3>彭城七里历史文化</h3>
+                </div>
+                <div class="boxes">
+                    <!-- 彭城七里文化展示 -->
+                    <div class="grid_4">
+                        <figure>
+                            <div><img src="images/彭城七里历史文化街区.png" alt="彭城七里"></div>
+                            <figcaption>
+                                <h3>彭城七里历史文化街区</h3>
+                                <p>彭城七里历史文化街区是徐州市的文化名片，汇聚了两汉、大运河、明清建筑、美食和民俗非遗文化，展现了丰富的历史底蕴和独特风貌。</p>
+                                <a href="https://cn.bing.com/search?q=%E5%BD%AD%E5%9F%8E%E4%B8%83%E9%87%8C%E5%8E%86%E5%8F%B2%E6%96%87%E5%8C%96%E8%A1%97%E5%8C%BA&qs=n&form=QBRE&sp=-1&lq=0&pq=%E5%BD%AD%E5%9F%8E%E4%B8%83%E9%87%8C%E5%8E%86%E5%8F%B2%E6%96%87%E5%8C%96%E8%A1%97%E5%8C%BA&sc=9-10&sk=&cvid=0133AD4539544B2DBA2023D3FEC2B33B&ghsh=0&ghacc=0&ghpl="
+                                    class="btn">了解更多</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                    <!-- 两汉文化 -->
+                    <div class="grid_4">
+                        <figure>
+                            <div><img src="images/两汉文化.png" alt="两汉文化"></div>
+                            <figcaption>
+                                <h3>两汉文化</h3>
+                                <p>彭城七里街区展示了徐州的两汉文化，从历史遗迹到文化传承，全面展现了汉代的文化精髓。</p>
+                                <a href="https://cn.bing.com/search?q=%E5%BD%AD%E5%9F%8E%E4%B8%83%E9%87%8C%E4%B8%A4%E6%B1%89%E6%96%87%E5%8C%96&qs=n&form=QBRE&sp=-1&lq=0&pq=%E5%BD%AD%E5%9F%8E%E4%B8%83%E9%87%8C%E4%B8%A4%E6%B1%89%E6%96%87%E5%8C%96&sc=1-8&sk=&cvid=FA936FD8AB2247AF9D572A5D6A344FC6&ghsh=0&ghacc=0&ghpl="
+                                    class="btn">了解更多</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                    <!-- 大运河文化 -->
+                    <div class="grid_4">
+                        <figure>
+                            <div><img src="images/大运河文化.png" alt="大运河文化"></div>
+                            <figcaption>
+                                <h3>大运河文化</h3>
+                                <p>作为世界文化遗产的长江大运河，徐州的这部分段落承载着重要的历史意义，沿线的文化遗址和活动为游客提供了独特的体验。</p>
+                                <a href="https://cn.bing.com/search?q=%E5%BD%AD%E5%9F%8E%E4%B8%83%E9%87%8C%E5%A4%A7%E8%BF%90%E6%B2%B3%E6%96%87%E5%8C%96&qs=n&form=QBRE&sp=-1&lq=0&pq=%E5%BD%AD%E5%9F%8E%E4%B8%83%E9%87%8C%E5%A4%A7%E8%BF%90%E6%B2%B3%E6%96%87%E5%8C%96&sc=0-9&sk=&cvid=9FC7463494C6467490527698A91BDECA&ghsh=0&ghacc=0&ghpl="
+                                    class="btn">了解更多</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 页脚信息 -->
+        <footer>
+            <div class="container_12">
+                <div class="grid_12">
+                    <div class="socials">
+                        <a href="https://s.weibo.com/weibo?q=%E5%BD%AD%E5%9F%8E%E4%B8%83%E9%87%8C">微博</a>
+                        <a href="https://wx.qq.com/">微信</a>
+                        <a
+                            href="https://www.douyin.com/root/search/%E5%BD%AD%E5%9F%8E%E4%B8%83%E9%87%8C?aid=615aa22d-34d2-4ed4-ad07-bf1611070e08&type=general">抖音</a>
+                        <a
+                            href="https://www.zhihu.com/search?type=content&q=%E5%BD%AD%E5%9F%8E%E4%B8%83%E9%87%8C">知乎</a>
+                    </div>
+                    <div class="copy">彭城逸韵 © 2025 | <a href="#">优先政策</a> | 旅行请联系我们</div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>
